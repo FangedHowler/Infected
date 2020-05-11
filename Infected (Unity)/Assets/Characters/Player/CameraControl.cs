@@ -14,7 +14,7 @@ public class CameraControl : MonoBehaviour
     Vector3 rotationSmoothVelocity;
     Vector3 currentRotation;
 
-    float yaw;      //Mouse left and right 
+    static float yaw;      //Mouse left and right 
     float pitch;    //Mouse up and down
 
     private void LateUpdate()
