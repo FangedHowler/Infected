@@ -5,16 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
-    [Header("Health")]
+    [Header("stats")]
     public int currentHealth;
     public int maxHealth;
+    public float speed = 5;
+    public int strength;
+    public int defense;
 
-    [Header("Stamina")]
-    public int maxStamina;
-    public int currentStamina;
-
-    [Header("UI elements")]
+    [Header("reference")]
     public PlayerHealthBar healthBar;
+
 
     public void Start()
     {
@@ -23,7 +23,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
             TakeDamage(2);
         }
@@ -35,8 +35,11 @@ public class PlayerStats : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            Application.LoadLevel(1);
+            SceneManager.LoadScene(1);
         }
     }
+    public void MaxHealth(int maxHealth)
+    {
 
+    }
 }
